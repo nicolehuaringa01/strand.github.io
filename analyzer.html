@@ -1,1 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ingredient Analyzer | strand.</title>
+
+    <meta name="description"
+        content="Paste a shampoo or conditioner ingredient list and instantly understand what every ingredient does.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            strand<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="analyzer.html" class="active">Ingredient Analyzer</a></li>
+            <li><a href="search.html">Product Search</a></li>
+            <li><a href="hair-types.html">Hair Types</a></li>
+            <li><a href="ingredients.html">Ingredient Library</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="about.html">About</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- ================================= -->
+<!-- HERO -->
+<!-- ================================= -->
+
+<section class="page-hero">
+
+    <p class="eyebrow">
+
+        Ingredient Analyzer
+
+    </p>
+
+    <h1>
+
+        Understand your formula.
+
+    </h1>
+
+    <p class="hero-description">
+
+        Paste the ingredient list from any shampoo,
+        conditioner, mask or leave-in.
+
+        We'll identify every ingredient,
+        explain what it does,
+        and estimate which hair types the formula is best suited for.
+
+    </p>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- INPUT -->
+<!-- ================================= -->
+
+<section class="analyzer-input">
+
+    <div class="input-card">
+
+        <label for="ingredients">
+
+            Paste ingredients
+
+        </label>
+
+        <textarea
+            id="ingredients"
+            placeholder="Example:
+
+Water, Sodium Laureth Sulfate, Cocamidopropyl Betaine, Glycerin, Panthenol..."
+        ></textarea>
+
+        <div class="input-buttons">
+
+            <button
+                class="primary-button"
+                id="analyzeButton">
+
+                Analyze Formula
+
+            </button>
+
+            <button
+                class="secondary-button"
+                id="clearButton">
+
+                Clear
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- SUMMARY -->
+<!-- ================================= -->
+
+<section class="summary">
+
+<h2>
+
+Formula Summary
+
+</h2>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+
+<h3>
+
+Cleaning
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Hydration
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Conditioning
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Protein
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Silicones
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<h3>
+
+Overall
+
+</h3>
+
+<p>
+
+Waiting for analysis
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- HAIR MATCH -->
+<!-- ================================= -->
+
+<section class="hair-match">
+
+<h2>
+
+Best Match
+
+</h2>
+
+<div class="match-grid">
+
+<div class="match-card">
+
+<h3>
+
+Fine Hair
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="match-card">
+
+<h3>
+
+Low Porosity
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="match-card">
+
+<h3>
+
+Dry Hair
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+<div class="match-card">
+
+<h3>
+
+Damaged Hair
+
+</h3>
+
+<p>
+
+—
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- INGREDIENT TABLE -->
+<!-- ================================= -->
+
+<section class="results">
+
+<h2>
+
+Ingredient Breakdown
+
+</h2>
+
+<table class="ingredient-table">
+
+<thead>
+
+<tr>
+
+<th>Ingredient</th>
+
+<th>Category</th>
+
+<th>Purpose</th>
+
+<th>Hair Suitability</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ingredientResults">
+
+<tr>
+
+<td colspan="4">
+
+Your ingredient analysis will appear here.
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+
+<!-- ================================= -->
+<!-- DISCLAIMER -->
+<!-- ================================= -->
+
+<section class="disclaimer">
+
+<h2>
+
+Remember
+
+</h2>
+
+<p>
+
+Ingredient lists are ordered approximately by concentration,
+but exact percentages are rarely disclosed.
+
+Our recommendations are based on cosmetic science,
+ingredient function,
+and formulation patterns,
+not marketing claims.
+
+</p>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="footer-logo">
+
+strand.
+
+</div>
+
+<div class="footer-links">
+
+<a href="about.html">About</a>
+
+<a href="#">Privacy</a>
+
+<a href="#">Terms</a>
+
+<a href="#">GitHub</a>
+
+<a href="#">Contact</a>
+
+</div>
+
+<p>
+
+© 2026 strand.
+
+</p>
+
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
